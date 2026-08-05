@@ -14,6 +14,10 @@
 # No pytest hook yet — this repo has no test suite. Add one alongside a pytest
 # job in CI once tests/ exists.
 
+# Floor rather than an exact pin: pre-commit 2.x/3.x differ on default hook
+# stages, so an old client can silently skip or misfire hooks that pass here.
+minimum_pre_commit_version: "4.0.0"
+
 repos:
   # 1) Ruff format — auto-fix on commit (not --check; that only fails)
   - repo: local
