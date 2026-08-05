@@ -51,6 +51,9 @@ coverage.xml
 # Ruff
 .ruff_cache/
 
+# Jupyter
+.ipynb_checkpoints/
+
 # Claude Code — per-user local settings, not shared
 .claude/settings.local.json
 
