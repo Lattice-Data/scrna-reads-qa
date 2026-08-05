@@ -1,0 +1,22 @@
+name: Lint
+
+on:
+  push:
+    branches: ['**']
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      # Pinned so an unpinned ruff cannot silently pick up new rules on release.
+      # Keep this version in sync across Lattice-Data repos.
+      - name: Install ruff
+        run: pip install ruff==0.16.1
+      - name: Run ruff check
+        run: ruff check .
+      - name: Run ruff format check
+        run: ruff format --check .
