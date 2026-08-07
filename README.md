@@ -10,4 +10,6 @@ A pipeline to independently verify scRNA-seq metadata by extracting signal direc
 
 Built using Claude Code
 
+Development: run `pre-commit install` once to lint on commit; CI enforces the same via `ruff check .` and `ruff format --check .`.
+
 Status: planning
